@@ -1,0 +1,10 @@
+{
+  "token": "", 
+  "prefix": "!",
+  "bug": "1117589353078734978",
+  "everyoneMention": false,
+  "copyright": "GiveawayManager",
+  "hostedBy": true,
+  "MONGODB_URI" : "mongodb+srv://TgxBots:aZDSPcmxfDD2lfNi@tgxbots.j21adry.mongodb.net/?retryWrites=true&w=majority",
+  "privateMessageInformation" : true
+}
