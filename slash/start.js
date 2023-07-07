@@ -68,31 +68,28 @@ module.exports = {
         });
       }
 
-      const giveawayChannel = interaction.options.getChannel('channel');
-      const giveawayDuration = interaction.options.getString('duration');
-      const giveawayWinnerCount = interaction.options.getInteger('winners');
-      const giveawayPrize = interaction.options.getString('prize');
+     const giveawayChannel = interaction.options.getChannel('channel');
+    const giveawayDuration = interaction.options.getString('duration');
+    const giveawayWinnerCount = interaction.options.getInteger('winners');
+    const giveawayPrize = interaction.options.getString('prize');
 
-      if (!giveawayChannel.isText()) {
-        return interaction.reply({
-          content: 'Please select a text channel!',
-          ephemeral: true
-        });
-      }
-
-      if (isNaN(ms(giveawayDuration))) {
-        return interaction.reply({
-          content: 'Please select a valid duration!',
-          ephemeral: true
-        });
-      }
-
-      if (giveawayWinnerCount < 1) {
-        return interaction.reply({
-          content: 'Please select a valid winner count (greater or equal to one)!',
-          ephemeral: true
-        });
-      }
+    if (!giveawayChannel.isTextBased()) {
+      return interaction.reply({
+        content: 'Please select a text channel!',
+        ephemeral: true
+      });
+    }
+   if(isNaN(ms(giveawayDuration))) {
+    return interaction.reply({
+      content: 'Please select a valid duration!',
+      ephemeral: true
+    });
+  }
+    if (giveawayWinnerCount < 1) {
+      return interaction.reply({
+        content: 'Please select a valid winner count! greater or equal to one.',
+      })
+    }
 
       const bonusRole = interaction.options.getRole('bonusrole');
       const bonusEntries = interaction.options.getInteger('bonusamount');
